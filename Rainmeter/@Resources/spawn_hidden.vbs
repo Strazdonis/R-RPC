@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "r-rpc.exe", 0
