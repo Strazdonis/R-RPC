@@ -5,20 +5,9 @@ var WebSocket = require("WS");
 var reconnect;
 var BreakException = {};
 
-function humanFileSize(bytes, si) {
-    var thresh = si ? 1000 : 1024;
-    if(Math.abs(bytes) < thresh) {
-        return bytes + ' B';
-    }
-    var units = si
-        ? ['kB','MB','GB','TB','PB','EB','ZB','YB']
-        : ['KiB','MiB','GiB','TiB','PiB','EiB','ZiB','YiB'];
-    var u = -1;
-    do {
-        bytes /= thresh;
-        ++u;
-    } while(Math.abs(bytes) >= thresh && u < units.length - 1);
-    return bytes.toFixed(1)+' '+units[u];
+var fs = require('fs');
+if (!fs.existsSync(process.env.HOME + "\\AppData\\Roaming\\Rainmeter\\Plugins\\MessagePassing.dll") || !fs.existsSync(process.env.HOME + "\\AppData\\Roaming\\Rainmeter\\Plugins\\messagepassing.dll")) {
+  console.log("missing MessagePassing.dll");
 }
 
 function open() {
@@ -50,7 +39,7 @@ var onMessage = function(event) {
   var res = event.data.split(" ");
   client.updatePresence({
     state:  Math.round(res[0] * 10) / 10 + '% CPU usage',
-    details: humanFileSize(res[1], true) + ' RAM usage',
+    details: res[1] + ' skins loaded',
     largeImageKey: 'rainmeter',
     largeImageText: 'Desktop customization tool'
   });
