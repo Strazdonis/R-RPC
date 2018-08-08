@@ -6,14 +6,13 @@ R-RPC is a simple [Rainmeter](https://rainmeter.net) skin that sends rich-presen
 
   - The "Node" part is a Node.js app that creates a websocket server (ws://127.0.0.1:58932/r-rpc)
   - The Rainmeter skin then connects to that websocket and sends CPU & RAM usage of the "Rainmeter.exe" process
-  - I also package that into an .exe using [pkg](https://www.npmjs.com/package/pkg) so rainmeter can start that websocket server with a bang (Rainmeter/@Resources/r-rpc.exe.txt)
+  - I also package that into an .exe using [pkg](https://www.npmjs.com/package/pkg) so rainmeter can start that websocket server with a bang (Rainmeter/@Resources/r-rpc.exe)
   - Using the bangs onRefreshAction & OnCloseAction I execute .vbs files so the .exe launches & gets killed hidden instead of spawning a console window.
 
 ### TODO
 In the future I am willing to add this functionallity:
 
   - Functional settings for users (Rainmeter & Node wise)
-  - more information to display (Loaded skins?)
 
 ### Usage
 
