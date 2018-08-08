@@ -2,6 +2,9 @@
 
 R-RPC is a simple [Rainmeter](https://rainmeter.net) skin that sends rich-presence data to Discord (Rainmeter CPU & RAM usage *for now*).
 
+# How it looks
+![RPC](http://storuliukas.ml/usuck/Discord_2018-08-09_01-48-25.png)
+
 # How it works
 
   - The "Node" part is a Node.js app that creates a websocket server (ws://127.0.0.1:58932/r-rpc)
