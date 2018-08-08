@@ -17,3 +17,10 @@ In the future I am willing to add this functionallity:
 ### Usage
 
 If you just want to use the skin then head to [Releases](https://github.com/Strazdonis/R-RPC/releases) and download the first result that you see, install the skin as you would any other. After loading the skin Discord will automatically update it's presence (might take up to 15s).
+
+### Issues
+
+If you notice that something is mis-behaving launch r-rpc.exe and check what the console window says.
+Make sure you have the "Display currently running game as a status message." setting ON in discord.
+
+If RPC shows that you have more skins loaded than you have - clean up your Rainmeter.ini file.
