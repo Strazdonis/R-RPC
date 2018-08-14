@@ -13,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "discord-rich-presence": "0.0.7",
-    "find-process": "^1.1.1",
-    "pidusage": "^2.0.15"
+    "wscat": "^2.2.1"
   }
 }
