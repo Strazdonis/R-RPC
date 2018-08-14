@@ -1,6 +1,6 @@
 # R-RPC (Rainmeter Rich Presence)
 
-R-RPC is a simple [Rainmeter](https://rainmeter.net) skin that sends rich-presence data to Discord (Rainmeter CPU & RAM usage *for now*).
+R-RPC is a simple [Rainmeter](https://rainmeter.net) skin that sends rich-presence data to Discord (Rainmeter CPU & RAM usage or amount of loaded skins. *customizable in settings*).
 
 # How it looks
 ![RPC](http://storuliukas.ml/usuck/Discord_2018-08-14_18-28-22.png)
@@ -24,7 +24,7 @@ Next to the rpc.ini you will find a "settings" folder with settings.ini in it. L
 ### TODO
 In the future I am willing to add this functionallity:
 
-  - more functionality.
+  - more functionality (custom field values with user input?).
 
 ### Issues
 
