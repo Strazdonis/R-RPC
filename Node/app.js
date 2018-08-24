@@ -53,14 +53,25 @@ var onMessage = function(event) {
 var res = event.data.split(" ");
 field = [];
 for(i = 0; i<=1; i++) {
-  if(res[i].includes("CPU")) {
-    worker=res[i].split("CPU").pop();
-    field[i]=Math.round(worker * 10) / 10 + '% CPU usage';
+  worker=res[i].replace(/([a-zA-Z])/g,'');
+  if(res[i].includes("ALL")) {
+    postfix="total ";
+  }else if(res[i].includes("RM")) {
+    postfix="RM ";
+  }
+
+  if(res[i].includes("RAMBOTH")) {
+   part=worker.split("&");
+   field[i]=humanFileSize(part[0], true) + ' (' + humanFileSize(part[1], true) + ' RM) RAM Usage';
+ } else if(res[i].includes("CPUBOTH")) {
+     part=worker.split("&");
+     field[i]=Math.round(part[0] * 10) / 10 + '% ' + ' (' + Math.round(part[1] * 10) / 10 + '% ' + ' RM) CPU Usage';
+  }
+  else if(res[i].includes("CPU")) {
+    field[i]=Math.round(worker * 10) / 10 + '% '+postfix+' CPU Usage';
   } else if(res[i].includes("RAM")) {
-    worker=res[i].split("RAM").pop();
-    field[i]=humanFileSize(worker, true) + ' RAM usage';
+    field[i]=humanFileSize(worker, true) + ' '+postfix+ 'RAM Usage';
   } else if(res[i].includes("Loaded")) {
-    worker=res[i].split("Loaded").pop();
     field[i]=worker + ' skins loaded';
   }
 }
@@ -78,8 +89,8 @@ if(res[3] < 6) {
   image="rainmeter1";
 }
   client.updatePresence({
-    state:  field[0],
-    details: field[1],
+    details:  field[0],
+    state: field[1],
     startTimestamp: elapsed,
     largeImageKey: image,
     largeImageText: 'Desktop customization tool'
