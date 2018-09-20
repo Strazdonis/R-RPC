@@ -4,7 +4,7 @@ R-RPC is a simple [Rainmeter](https://rainmeter.net) skin that sends rich-presen
 
 # How it looks
 ![RPC](http://storuliukas.ml/usuck/Discord_2018-08-14_18-28-22.png)
-![Settings](http://storuliukas.ml/usuck/Rainmeter_2018-08-14_18-28-49.png)
+![Settings](http://strongniggers.forsale/img/Strazdonis/Rainmeter_2018-09-20_19-24-53.jpg)
 
 # How it works
 
