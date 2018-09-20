@@ -50,44 +50,20 @@ var onClose = function() {
     }, 5000);
 };
 var onMessage = function(event) {
-var res = event.data.split(" ");
-field = [];
-for(i = 0; i<=1; i++) {
-  worker=res[i].replace(/([a-zA-Z])/g,'');
-  if(res[i].includes("ALL")) {
-    postfix="total ";
-  }else if(res[i].includes("RM")) {
-    postfix="RM ";
-  }
-
-  if(res[i].includes("RAMBOTH")) {
-   part=worker.split("&");
-   field[i]=humanFileSize(part[0], true) + ' (' + humanFileSize(part[1], true) + ' RM) RAM Usage';
- } else if(res[i].includes("CPUBOTH")) {
-     part=worker.split("&");
-     field[i]=Math.round(part[0] * 10) / 10 + '% ' + ' (' + Math.round(part[1] * 10) / 10 + '% ' + ' RM) CPU Usage';
-  }
-  else if(res[i].includes("CPU")) {
-    field[i]=Math.round(worker * 10) / 10 + '% '+postfix+' CPU Usage';
-  } else if(res[i].includes("RAM")) {
-    field[i]=humanFileSize(worker, true) + ' '+postfix+ 'RAM Usage';
-  } else if(res[i].includes("Loaded")) {
-    field[i]=worker + ' skins loaded';
-  }
+var field = event.data.split("`âˆŸâ†”â–²â–¼â˜º`");
+for(i in field) {
+  console.log(field[i]);
 }
 if(Updated == 0) {
-  if(res[2] == 1) {
+  if(field[2] == 1) {
     Updated=1;
     elapsed=(Date.now( )/ 1000 | 0);
   } else {
     elapsed=null;
   }
 }
-if(res[3] < 6) {
-  image="rainmeter"+res[3];
-} else {
-  image="rainmeter1";
-}
+image="rainmeter"+field[3];
+
   client.updatePresence({
     details:  field[0],
     state: field[1],
