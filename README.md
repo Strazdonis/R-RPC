@@ -24,7 +24,7 @@ Next to the rpc.ini you will find a "settings" folder with settings.ini in it. L
 ### TODO
 In the future I am willing to add this functionallity:
 
-  - more functionality (custom field values with user input?).
+  - QOL updates which will probably never be done.
 
 ### Issues
 
